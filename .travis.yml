@@ -6,7 +6,7 @@ before_install:
   - docker build -t sustain77/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run sustain77/react-test npm test -e CI=true -- --coverage 
+  - docker run sustain77/react-test npm test -- --coverage 
 
 after_success:
   - docker build -t sustain77/multi-client ./client
